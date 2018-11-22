@@ -223,6 +223,8 @@
     </Content>
     <None Include="Properties\PublishProfiles\epam-azure-training - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\epam-azure-training - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\epam-azure-training-app - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\epam-azure-training-app - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
