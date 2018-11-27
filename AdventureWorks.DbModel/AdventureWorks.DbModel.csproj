@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="AdventureWorksModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="BusinessEntity.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -163,7 +168,7 @@
   <ItemGroup>
     <EntityDeploy Include="AdventureWorksModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AdventureWorksModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AdventureWorksModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="AdventureWorksModel.edmx.diagram">
       <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
