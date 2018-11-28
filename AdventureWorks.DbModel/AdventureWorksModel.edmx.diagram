@@ -52,7 +52,7 @@
         <AssociationConnector Association="AdventureWorksModel.FK_PersonPhone_Person_BusinessEntityID" ManuallyRouted="false" />
         <AssociationConnector Association="AdventureWorksModel.FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID" ManuallyRouted="false" />
         <EntityTypeShape EntityType="AdventureWorksModel.AWBuildVersion" Width="1.5" PointX="11.875" PointY="11.5" />
-        <EntityTypeShape EntityType="AdventureWorksModel.DatabaseLog" Width="1.5" PointX="13.875" PointY="1.5" />
+        <EntityTypeShape EntityType="AdventureWorksModel.DatabaseLog" Width="1.5" PointX="12.625" PointY="1.375" />
         <EntityTypeShape EntityType="AdventureWorksModel.ErrorLog" Width="1.5" PointX="13.875" PointY="5.5" />
         <EntityTypeShape EntityType="AdventureWorksModel.BillOfMaterial" Width="1.5" PointX="17.125" PointY="25.125" />
         <EntityTypeShape EntityType="AdventureWorksModel.Culture" Width="1.5" PointX="25.875" PointY="40.625" />
