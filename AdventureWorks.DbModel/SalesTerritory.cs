@@ -12,44 +12,39 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class SalesTerritory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
+        public SalesTerritory()
         {
-            this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
-            this.EmailAddresses = new HashSet<EmailAddress>();
-            this.PersonPhones = new HashSet<PersonPhone>();
+            this.StateProvinces = new HashSet<StateProvince>();
             this.Customers = new HashSet<Customer>();
-            this.PersonCreditCards = new HashSet<PersonCreditCard>();
+            this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
+            this.SalesPersons = new HashSet<SalesPerson>();
+            this.SalesTerritoryHistories = new HashSet<SalesTerritoryHistory>();
         }
     
-        public int BusinessEntityID { get; set; }
-        public string PersonType { get; set; }
-        public bool NameStyle { get; set; }
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string Suffix { get; set; }
-        public int EmailPromotion { get; set; }
-        public string AdditionalContactInfo { get; set; }
-        public string Demographics { get; set; }
+        public int TerritoryID { get; set; }
+        public string Name { get; set; }
+        public string CountryRegionCode { get; set; }
+        public string Group { get; set; }
+        public decimal SalesYTD { get; set; }
+        public decimal SalesLastYear { get; set; }
+        public decimal CostYTD { get; set; }
+        public decimal CostLastYear { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
-        public virtual Employee Employee { get; set; }
-        public virtual BusinessEntity BusinessEntity { get; set; }
+        public virtual CountryRegion CountryRegion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EmailAddress> EmailAddresses { get; set; }
-        public virtual Password Password { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonPhone> PersonPhones { get; set; }
+        public virtual ICollection<StateProvince> StateProvinces { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonCreditCard> PersonCreditCards { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SalesPerson> SalesPersons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SalesTerritoryHistory> SalesTerritoryHistories { get; set; }
     }
 }

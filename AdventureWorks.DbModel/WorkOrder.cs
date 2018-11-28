@@ -12,25 +12,28 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class BusinessEntity
+    public partial class WorkOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BusinessEntity()
+        public WorkOrder()
         {
-            this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
-            this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+            this.WorkOrderRoutings = new HashSet<WorkOrderRouting>();
         }
     
-        public int BusinessEntityID { get; set; }
-        public System.Guid rowguid { get; set; }
+        public int WorkOrderID { get; set; }
+        public int ProductID { get; set; }
+        public int OrderQty { get; set; }
+        public int StockedQty { get; set; }
+        public short ScrappedQty { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public System.DateTime DueDate { get; set; }
+        public Nullable<short> ScrapReasonID { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
+        public virtual Product Product { get; set; }
+        public virtual ScrapReason ScrapReason { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Store Store { get; set; }
-        public virtual Vendor Vendor { get; set; }
+        public virtual ICollection<WorkOrderRouting> WorkOrderRoutings { get; set; }
     }
 }

@@ -12,29 +12,25 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class StateProvince
+    public partial class ShipMethod
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StateProvince()
+        public ShipMethod()
         {
-            this.Addresses = new HashSet<Address>();
-            this.SalesTaxRates = new HashSet<SalesTaxRate>();
+            this.PurchaseOrderHeaders = new HashSet<PurchaseOrderHeader>();
+            this.SalesOrderHeaders = new HashSet<SalesOrderHeader>();
         }
     
-        public int StateProvinceID { get; set; }
-        public string StateProvinceCode { get; set; }
-        public string CountryRegionCode { get; set; }
-        public bool IsOnlyStateProvinceFlag { get; set; }
+        public int ShipMethodID { get; set; }
         public string Name { get; set; }
-        public int TerritoryID { get; set; }
+        public decimal ShipBase { get; set; }
+        public decimal ShipRate { get; set; }
         public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Address> Addresses { get; set; }
-        public virtual CountryRegion CountryRegion { get; set; }
+        public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalesTaxRate> SalesTaxRates { get; set; }
-        public virtual SalesTerritory SalesTerritory { get; set; }
+        public virtual ICollection<SalesOrderHeader> SalesOrderHeaders { get; set; }
     }
 }

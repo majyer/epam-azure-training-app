@@ -12,29 +12,19 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class StateProvince
+    public partial class ScrapReason
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StateProvince()
+        public ScrapReason()
         {
-            this.Addresses = new HashSet<Address>();
-            this.SalesTaxRates = new HashSet<SalesTaxRate>();
+            this.WorkOrders = new HashSet<WorkOrder>();
         }
     
-        public int StateProvinceID { get; set; }
-        public string StateProvinceCode { get; set; }
-        public string CountryRegionCode { get; set; }
-        public bool IsOnlyStateProvinceFlag { get; set; }
+        public short ScrapReasonID { get; set; }
         public string Name { get; set; }
-        public int TerritoryID { get; set; }
-        public System.Guid rowguid { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Address> Addresses { get; set; }
-        public virtual CountryRegion CountryRegion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalesTaxRate> SalesTaxRates { get; set; }
-        public virtual SalesTerritory SalesTerritory { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

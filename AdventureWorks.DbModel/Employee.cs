@@ -20,6 +20,7 @@ namespace AdventureWorks.DbModel
             this.EmployeeDepartmentHistories = new HashSet<EmployeeDepartmentHistory>();
             this.EmployeePayHistories = new HashSet<EmployeePayHistory>();
             this.JobCandidates = new HashSet<JobCandidate>();
+            this.PurchaseOrderHeaders = new HashSet<PurchaseOrderHeader>();
         }
     
         public int BusinessEntityID { get; set; }
@@ -45,5 +46,8 @@ namespace AdventureWorks.DbModel
         public virtual ICollection<EmployeePayHistory> EmployeePayHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JobCandidate> JobCandidates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
+        public virtual SalesPerson SalesPerson { get; set; }
     }
 }

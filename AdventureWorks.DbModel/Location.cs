@@ -12,29 +12,24 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class StateProvince
+    public partial class Location
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StateProvince()
+        public Location()
         {
-            this.Addresses = new HashSet<Address>();
-            this.SalesTaxRates = new HashSet<SalesTaxRate>();
+            this.ProductInventories = new HashSet<ProductInventory>();
+            this.WorkOrderRoutings = new HashSet<WorkOrderRouting>();
         }
     
-        public int StateProvinceID { get; set; }
-        public string StateProvinceCode { get; set; }
-        public string CountryRegionCode { get; set; }
-        public bool IsOnlyStateProvinceFlag { get; set; }
+        public short LocationID { get; set; }
         public string Name { get; set; }
-        public int TerritoryID { get; set; }
-        public System.Guid rowguid { get; set; }
+        public decimal CostRate { get; set; }
+        public decimal Availability { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Address> Addresses { get; set; }
-        public virtual CountryRegion CountryRegion { get; set; }
+        public virtual ICollection<ProductInventory> ProductInventories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalesTaxRate> SalesTaxRates { get; set; }
-        public virtual SalesTerritory SalesTerritory { get; set; }
+        public virtual ICollection<WorkOrderRouting> WorkOrderRoutings { get; set; }
     }
 }

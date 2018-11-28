@@ -12,25 +12,22 @@ namespace AdventureWorks.DbModel
     using System;
     using System.Collections.Generic;
     
-    public partial class BusinessEntity
+    public partial class ProductPhoto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BusinessEntity()
+        public ProductPhoto()
         {
-            this.BusinessEntityAddresses = new HashSet<BusinessEntityAddress>();
-            this.BusinessEntityContacts = new HashSet<BusinessEntityContact>();
+            this.ProductProductPhotoes = new HashSet<ProductProductPhoto>();
         }
     
-        public int BusinessEntityID { get; set; }
-        public System.Guid rowguid { get; set; }
+        public int ProductPhotoID { get; set; }
+        public byte[] ThumbNailPhoto { get; set; }
+        public string ThumbnailPhotoFileName { get; set; }
+        public byte[] LargePhoto { get; set; }
+        public string LargePhotoFileName { get; set; }
         public System.DateTime ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
-        public virtual Person Person { get; set; }
-        public virtual Store Store { get; set; }
-        public virtual Vendor Vendor { get; set; }
+        public virtual ICollection<ProductProductPhoto> ProductProductPhotoes { get; set; }
     }
 }

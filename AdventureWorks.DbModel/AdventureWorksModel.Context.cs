@@ -18,7 +18,7 @@ namespace AdventureWorks.DbModel
     public partial class Entities : DbContext
     {
         public Entities()
-            : base("name=AdventureWorksEntities")
+            : base("name=Entities")
         {
         }
     
@@ -54,6 +54,57 @@ namespace AdventureWorks.DbModel
         public virtual DbSet<vJobCandidateEmployment> vJobCandidateEmployments { get; set; }
         public virtual DbSet<vAdditionalContactInfo> vAdditionalContactInfoes { get; set; }
         public virtual DbSet<vStateProvinceCountryRegion> vStateProvinceCountryRegions { get; set; }
+        public virtual DbSet<AWBuildVersion> AWBuildVersions { get; set; }
+        public virtual DbSet<DatabaseLog> DatabaseLogs { get; set; }
+        public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
+        public virtual DbSet<BillOfMaterial> BillOfMaterials { get; set; }
+        public virtual DbSet<Culture> Cultures { get; set; }
+        public virtual DbSet<Illustration> Illustrations { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<ProductCostHistory> ProductCostHistories { get; set; }
+        public virtual DbSet<ProductDescription> ProductDescriptions { get; set; }
+        public virtual DbSet<ProductInventory> ProductInventories { get; set; }
+        public virtual DbSet<ProductListPriceHistory> ProductListPriceHistories { get; set; }
+        public virtual DbSet<ProductModel> ProductModels { get; set; }
+        public virtual DbSet<ProductModelIllustration> ProductModelIllustrations { get; set; }
+        public virtual DbSet<ProductModelProductDescriptionCulture> ProductModelProductDescriptionCultures { get; set; }
+        public virtual DbSet<ProductPhoto> ProductPhotoes { get; set; }
+        public virtual DbSet<ProductProductPhoto> ProductProductPhotoes { get; set; }
+        public virtual DbSet<ProductReview> ProductReviews { get; set; }
+        public virtual DbSet<ProductSubcategory> ProductSubcategories { get; set; }
+        public virtual DbSet<ScrapReason> ScrapReasons { get; set; }
+        public virtual DbSet<TransactionHistory> TransactionHistories { get; set; }
+        public virtual DbSet<TransactionHistoryArchive> TransactionHistoryArchives { get; set; }
+        public virtual DbSet<UnitMeasure> UnitMeasures { get; set; }
+        public virtual DbSet<WorkOrder> WorkOrders { get; set; }
+        public virtual DbSet<WorkOrderRouting> WorkOrderRoutings { get; set; }
+        public virtual DbSet<ProductVendor> ProductVendors { get; set; }
+        public virtual DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public virtual DbSet<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
+        public virtual DbSet<ShipMethod> ShipMethods { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
+        public virtual DbSet<CountryRegionCurrency> CountryRegionCurrencies { get; set; }
+        public virtual DbSet<CreditCard> CreditCards { get; set; }
+        public virtual DbSet<Currency> Currencies { get; set; }
+        public virtual DbSet<CurrencyRate> CurrencyRates { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<PersonCreditCard> PersonCreditCards { get; set; }
+        public virtual DbSet<SalesOrderDetail> SalesOrderDetails { get; set; }
+        public virtual DbSet<SalesOrderHeader> SalesOrderHeaders { get; set; }
+        public virtual DbSet<SalesOrderHeaderSalesReason> SalesOrderHeaderSalesReasons { get; set; }
+        public virtual DbSet<SalesPerson> SalesPersons { get; set; }
+        public virtual DbSet<SalesPersonQuotaHistory> SalesPersonQuotaHistories { get; set; }
+        public virtual DbSet<SalesReason> SalesReasons { get; set; }
+        public virtual DbSet<SalesTaxRate> SalesTaxRates { get; set; }
+        public virtual DbSet<SalesTerritory> SalesTerritories { get; set; }
+        public virtual DbSet<SalesTerritoryHistory> SalesTerritoryHistories { get; set; }
+        public virtual DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public virtual DbSet<SpecialOffer> SpecialOffers { get; set; }
+        public virtual DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
+        public virtual DbSet<Store> Stores { get; set; }
+        public virtual DbSet<ProductDocument> ProductDocuments { get; set; }
     
         public virtual int uspUpdateEmployeeHireInfo(Nullable<int> businessEntityID, string jobTitle, Nullable<System.DateTime> hireDate, Nullable<System.DateTime> rateChangeDate, Nullable<decimal> rate, Nullable<byte> payFrequency, Nullable<bool> currentFlag)
         {
