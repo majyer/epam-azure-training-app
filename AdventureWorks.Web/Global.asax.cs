@@ -83,14 +83,15 @@ namespace AdventureWorks.Web
 
                     // Create a file in your local MyDocuments folder to upload to a blob.
                     //string localPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    string localPath = "./";// Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    string localPath = "D:\\home\\site\\wwwroot\\test";// Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     string localFileName = System.Net.Dns.GetHostName() + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".txt";
                     sourceFile = Path.Combine(localPath, localFileName);
                     // Write text to the file.
+                    //File.SetAttributes(sourceFile, FileAttributes.Normal);
                     File.WriteAllText(sourceFile, "Hello, World!");
 
-                    azurelog.Info("Temp file ="+sourceFile);
-                    azurelog.Info("Uploading to Blob storage as blob "+localFileName);
+                    appLog.Info("Temp file ="+sourceFile);
+                    appLog.Info("Uploading to Blob storage as blob "+localFileName);
 
                     // Get a reference to the blob address, then upload the file to the blob.
                     // Use the value of localFileName for the blob name.
