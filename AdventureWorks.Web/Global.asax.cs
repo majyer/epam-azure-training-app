@@ -13,6 +13,8 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using System.Threading.Tasks;
 using log4net.Appender;
 using log4net.Core;
+using AdventureWorks.Services.HumanResources;
+using Microsoft.ApplicationInsights;
 namespace AdventureWorks.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -31,6 +33,13 @@ namespace AdventureWorks.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             azurelog.Info("test1");
             appLog.Info("test1");
+
+            TelemetryClient client = new TelemetryClient();
+
+            DepartmentService departmentService = new DepartmentService();
+            var departmentGroups = departmentService.GetDepartments();
+
+            client.TrackTrace("+++++++++++++++++DepartmentsController");
 
         }
         public void Azure_Table_Appender()
