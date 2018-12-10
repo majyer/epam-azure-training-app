@@ -15,6 +15,8 @@ using log4net.Appender;
 using log4net.Core;
 using AdventureWorks.Services.HumanResources;
 using Microsoft.ApplicationInsights;
+using System.Web.Http;
+
 namespace AdventureWorks.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -25,7 +27,7 @@ namespace AdventureWorks.Web
         protected void Application_Start()
         {
             ProcessAsync().GetAwaiter().GetResult();
-
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             Azure_Table_Appender();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -33,7 +35,7 @@ namespace AdventureWorks.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             azurelog.Info("test1");
             appLog.Info("test1");
-
+            
             TelemetryClient client = new TelemetryClient();
 
             DepartmentService departmentService = new DepartmentService();
