@@ -10,7 +10,7 @@ using AutoMapper;
 
 namespace AdventureWorks.Web.Controllers
 {
-    public class AzureTrainingController : ApiController
+    public class DepartmentApiController : ApiController
     {
         private static readonly List<Department> Departments = new List<Department>
         {
@@ -38,7 +38,10 @@ namespace AdventureWorks.Web.Controllers
         [ResponseType(typeof(IEnumerable<Department>))]
         public HttpResponseMessage Get()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, Departments);
+            DepartmentService departmentService = new DepartmentService();
+            var departmentGroups = departmentService.GetDepartments();
+            //return Request.CreateResponse(HttpStatusCode.OK, Departments);
+            return Request.CreateResponse(HttpStatusCode.OK, departmentGroups);
         }
         /// <summary>
         /// Get department by id
