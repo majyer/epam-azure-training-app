@@ -50,13 +50,13 @@ namespace AdventureWorks.Web.Controllers
             HttpContent InfohttpContent = new StringContent("");
             InfohttpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var httpClient = new HttpClient();
-            var Info = httpClient.PostAsync(strUrl, InfohttpContent).Result.Content.ReadAsStringAsync().Result;
+            var Info = httpClient.GetAsync(strUrl).Result.Content.ReadAsStringAsync().Result;
             //DepartmentInfo departmentInfo = JsonConvert.DeserializeObject(Info).;
-            DepartmentInfo departmentInfo = EmployeeSerializer.Deserialize<DepartmentInfo>(Info);
+            //DepartmentInfo departmentInfo = EmployeeSerializer.Deserialize<DepartmentInfo>(Info);
 
 
 
-            ViewBag.Title = "Employees in " + departmentInfo.Name + " Department";
+            //ViewBag.Title = "Employees in " + departmentInfo.Name + " Department";
 
             return View(departmentEmployees);
         }
