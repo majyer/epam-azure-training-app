@@ -40,3 +40,17 @@ recoder time:2018-12-12 10:25:32,831 content:test1
 --------------------------------------------------
 recoder time:2018-12-12 10:25:32,831 content:test1
 --------------------------------------------------
+recoder time:2018-12-12 17:15:13,921 content:Created container helloworld2018-12-12-17-15-12
+--------------------------------------------------
+recoder time:2018-12-12 17:15:14,548 content:Temp file =D:\home\site\wwwroot\test\EPCNSZUW02502018-12-12-17-15-14.txt
+--------------------------------------------------
+recoder time:2018-12-12 17:15:14,549 content:Uploading to Blob storage as blob EPCNSZUW02502018-12-12-17-15-14.txt
+--------------------------------------------------
+recoder time:2018-12-12 17:15:15,200 content:Listing blobs in container.
+--------------------------------------------------
+recoder time:2018-12-12 17:15:15,521 content:https://epamtrainingdemo.blob.core.windows.net/helloworld2018-12-12-17-15-12/EPCNSZUW02502018-12-12-17-15-14.txt
+--------------------------------------------------
+recoder time:2018-12-12 17:15:19,710 content:test1
+--------------------------------------------------
+recoder time:2018-12-12 17:15:19,710 content:test1
+--------------------------------------------------

@@ -38,7 +38,8 @@ namespace AdventureWorks.Web.Controllers
             //ViewBag.Title = "Employees in " + departmentInfo.Name + " Department";
 
             //return View(departmentEmployees);
-            string strUrl = "http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/" + id.ToString();
+            string strUrl = "http://epam-azure-training-app.azurewebsites.net/api/DepartmentApi/" + id.ToString();
+            //string strUrl = "http://azure-training-webapps.azurewebsites.net/api/DepartmentApi/" + id.ToString();
 
             JavaScriptSerializer EmployeeSerializer = new JavaScriptSerializer();
             var EmployeehttpClient = new HttpClient();
