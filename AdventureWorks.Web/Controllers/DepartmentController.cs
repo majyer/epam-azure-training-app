@@ -45,16 +45,9 @@ namespace AdventureWorks.Web.Controllers
             var departmentInfo = departmentService.GetDepartmentInfo(id);
             stopwatch.Start();
             var cacheget = cache.StringGet(id.ToString());
-            //var hashes = cache.HashGetAll(id.ToString());
-          
             if (!cacheget.IsNull)
             {
                 departmentEmployees = JsonConvert.DeserializeObject<List<DepartmentEmployee>>(cacheget);
-                //departmentEmployees = new List<DepartmentEmployee>();
-                //foreach(DepartmentEmployee hashentry in departmentEmployees)
-                //{
-                //    departmentEmployees.Add(JsonConvert.DeserializeObject<DepartmentEmployee>(hashentry.Value));
-                //}
                 ViewBag.Title = "Employees in cache " + departmentInfo.Name + " Department";
             }
             else
@@ -65,15 +58,10 @@ namespace AdventureWorks.Web.Controllers
                 var employees = EmployeehttpClient.GetAsync(strUrl).Result.Content.ReadAsStringAsync().Result;
                 departmentEmployees = EmployeeSerializer.Deserialize<List<DepartmentEmployee>>(employees);
                 cache.StringSet(id.ToString(), JsonConvert.SerializeObject(departmentEmployees));
-                //foreach(DepartmentEmployee de in departmentEmployees)
-                //{
-                //    cache.StringSet(de.Id.ToString(), JsonConvert.SerializeObject(de));
-                //}
                 ViewBag.Title = "Employees in url" + departmentInfo.Name + " Department";
             }
             stopwatch.Stop();
             ViewBag.Message = "MS " + stopwatch.ElapsedMilliseconds;
-            //lazyConnection.Value.Dispose();
             return View(departmentEmployees);
         }
         private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
