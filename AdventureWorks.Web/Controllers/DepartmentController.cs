@@ -36,7 +36,6 @@ namespace AdventureWorks.Web.Controllers
         // GET: Departments/Employees/{id}
         public ActionResult Employees(int id)
         {
-
             var stopwatch = new Stopwatch();
             IDatabase cache = lazyConnection.Value.GetDatabase();
 
